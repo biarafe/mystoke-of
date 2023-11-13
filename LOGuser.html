@@ -1,0 +1,83 @@
+<?php session_start(); ?>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #076e34; /* Cor de fundo verde */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        background-color: #fff; /* Cor de fundo do container */
+        border-radius: 10px; /* Borda arredondada do container */
+        padding: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.463); /* Sombra suave */
+        text-align: center;
+        display: flex; /* Usar flexbox para alinhar itens horizontalmente */
+    }
+
+    .conteudo {
+        flex: 1; /* O conteúdo ocupa a maior parte do espaço */
+        padding: 10px; /* Espaçamento interno do conteúdo */
+    }
+
+    .imagem {
+        flex: 1; /* A imagem ocupa a mesma quantidade de espaço */
+        background: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/bfb06e88270421.5e2f388275913.jpg') no-repeat center center; /* Imagem de fundo */
+        background-size: cover; /* Redimensiona a imagem de fundo para cobrir o espaço */
+        border-radius: 5px; /* Borda arredondada para a imagem */
+        width: 100px;
+    }
+
+    h1 {
+        color: #09b31f; /* Cor do texto dentro do container */
+    }
+
+    button {
+        background-color: #00b894; /* Cor de fundo do botão */
+        color: #fff; /* Cor do texto do botão */
+        border: none;
+        border-radius: 5px; /* Borda arredondada do botão */
+        padding: 10px 20px; /* Espaçamento interno do botão */
+        cursor: pointer;
+    }
+</style>
+</head> 
+<body>
+<div class="container">
+    <div class="conteudo">
+        <h1>MYSTOK</h1>
+        
+        <form action="../php/login.php" method="POST">
+
+        <p>Digite seu e-mail</p>
+		<input type="email" name="email_user" placeholder="Digite seu E-mail">
+       
+        <p>SENHA</p>
+                <?php
+                        if(isset($_SESSION['erro-login'])){
+                            echo $_SESSION['erro-login'];
+                            session_destroy();
+                        }
+                        ?>
+        <input type="password" name="senha_user" placeholder="Entrar com a senha:">
+        <a href="url">esqueci minha senha</a>
+        <br>
+        <br>
+        <br>
+
+
+        <button type="submit">Entrar</button>
+    </div>
+    <div class="imagem"></div>
+</div>
+</html>

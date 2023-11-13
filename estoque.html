@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYSTOK</title>
+    <link rel="stylesheet" href="css/estilo.css">
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+
+<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+    <div id="menu">
+        <!-- Imagem à esquerda que redireciona para outra aba -->
+        <a href="home.html">
+            <img src="img/home.png" id="left-image" alt="Imagem Esquerda">
+        </a>
+
+        <!-- Primeira imagem à direita que redireciona para outra aba -->
+        <a href="home.html">
+            <img src="img/baras.png" id="right-images" alt="Primeira Imagem Direita">
+        </a>
+        
+        <!-- Segunda imagem à direita que redireciona para outra aba -->
+        <a href="PGuser.html">
+            <img src="img/user.png" id="right-images" alt="Segunda Imagem Direita">
+        </a>
+        
+        <!-- Primeira imagem à direita que redireciona para outra aba -->
+        <a href="estoque.html">
+            <img src="img/estoque.png" id="right-images" alt="Primeira Imagem Direita">
+        </a>
+        
+      
+    </div>
+
+
+<br><br><br><br><br><br>
+<hr size="10" width="95%" align="center" noshade>
+<button onclick="mostrarConteudo(1)">Visualizar seu estoque</button>
+<button onclick="mostrarConteudo(2)">Adicionar ao estoque</button>
+
+<div id="conteudo1">
+    <!-- Conteúdo 1 -->
+    <div class="card-body">
+        <h5 class="card-title"> 
+            <p class="card-text"><div class="linha d-flex"> <div class="card" style="width: 18rem; margin: 50px; ;" >
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Espaço reservado: tampa da imagem" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
+            <div class="card-body">
+              <h5 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Título do cartão</font></font></h5>
+              <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">  
+                 o título do cartão e compor a maior parte do conteúdo do cartão.</font></font></p>
+              <a href="#" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ir a algum lugar</font></font></a>
+            </div>
+           </div>
+        
+           <p class="card-text"><div class="linha d-flex">
+        <div class="card" style="width: 18rem; margin: 50px ;">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Espaço reservado: tampa da imagem" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
+            <div class="card-body">
+              <h5 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Título do cartão</font></font></h5>
+              <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Algum texto de exemplo rápido para desenvolver o título do cartão e compor a maior parte do conteúdo do cartão.</font></font></p>
+              <a href="#" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ir a algum lugar</font></font></a>
+            </div>
+           </div></h5>
+        <!-- ... Conteúdo da primeira div ... -->
+    </div>
+</div>
+
+<div id="conteudo2" class="hidden">
+    <!-- Conteúdo 2 -->
+   
+        <h5 class="card-title"><center>
+            <br><br><br><br>
+           
+            <form action="caduser.php" method="POST">
+                <h2>Clientes
+                    <p>
+                    Marca:⠀⠀<input type="text" name="user" placeholder="Marca do produto ">
+                    <p>
+                    
+                    Tipo:⠀⠀<input type="text" name="user" placeholder="EX:molho,farinha">
+                    <p>
+                    validade: <input type="text" name="telluser" placeholder="dd/mm/aaaa">
+                   <p>
+                    quantidade em L,KG:⠀<input type="text" name="email" placeholder="500g">
+                    <p>
+                   :quantidade de produtos⠀<input type="text" name="senha" placeholder="3 unidade">
+                    <p></p>
+                </h2>
+                <input type="reset" value="limpar campos">⠀⠀⠀
+                <button> Cadastrar </button>
+                </form>
+            </center></h5>
+    
+</div>
+
+<script>
+function mostrarConteudo(conteudo) {
+    if (conteudo === 1) {
+        document.getElementById("conteudo1").style.display = "block";
+        document.getElementById("conteudo2").style.display = "none";
+    } else if (conteudo === 2) {
+        document.getElementById("conteudo1").style.display = "none";
+        document.getElementById("conteudo2").style.display = "block";
+    }
+}
+</script>
+        
+</body>
+</html>
+
+
+

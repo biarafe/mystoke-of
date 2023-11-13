@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protótipo</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+  <header>
+    <div id="menu">
+      <!-- Imagem à esquerda que redireciona para outra aba -->
+      <a href="home.html">
+          <img src="img/home.png" id="left-image" alt="Imagem Esquerda">
+      </a>
+
+      <!-- Primeira imagem à direita que redireciona para outra aba -->
+      <a href="home.html">
+          <img src="img/baras.png" id="right-images" alt="Primeira Imagem Direita">
+      </a>
+      
+      <!-- Segunda imagem à direita que redireciona para outra aba -->
+      <a href="PGuser.html">
+          <img src="img/user.png" id="right-images" alt="Segunda Imagem Direita">
+      </a>
+      
+      <!-- Primeira imagem à direita que redireciona para outra aba -->
+      <a href="estoque.html">
+          <img src="img/estoque.png" id="right-images" alt="Primeira Imagem Direita">
+      </a>
+      
+    
+  </div>
+  </header>
+  <main>
+    <Br><br><br><br><br><br><br></Br>
+    <div class="column">
+      <h2>Gráfico 100%</h2>
+      <section class="graph"> <!-- clss do grafico para modificacao no css-->
+         
+        <!-- Chart.js -> inclui graficos javascrip -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+        <body>
+        <!--Srtart canvas -> Desenhar elementos graficos usando JS -->
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        
+        <script>
+        const xValues = ["MOLHO", "FARINHA DE TRIGO", "OLEO", "TOMATE", "MANJERICAO", "LEITE", "MUSSARELA"];
+        const yValues = [40, 50, 30, 65, 3,40,60];
+        const barColors = ["red", "green","blue","orange","black", "pink", "brown"];
+
+        
+        new Chart("myChart", {
+          <!-- Type -> Tipo de grafico a ser ultilizado, bar -> barra -->
+          type: "bar",
+          data: {
+            <!--labels-> rotulos-->
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            legend: {display: false},
+            title: {
+              display: true,
+              text: "SEU ESTOQUE"
+            }
+          }
+        });
+        </script>
+      </section>
+    </div>
+
+    <div class="column">
+      <h2>Informações com Animação</h2>
+      <div class="animation-box">
+        <p>Conteúdo com animação básica</p>
+      </div>
+
+      <div class="column">
+      <h2>Informações Extras</h2>
+      <!-- Inserir informações extras aqui -->
+    </div>
+
+  </main>
+  <footer>
+    <div class="owners">
+      <p>Karina de Almeida </p>
+      <p>Bianca Rafaela
+       Desenvolvedora 
+       e KDMKNDKF</p>
+    </div>
+  </footer>
+</body>
+</html>
